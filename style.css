@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
 
-:root{
+:root {
     --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
     --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
     --Grayish-Blue: hsl(212, 23%, 69%);
     --Light-Grayish-Blue: hsl(210, 46%, 95%);
 }
 
-*{
-   padding: 0px;
-   margin: 0px;
-   box-sizing: border-box;
-   font-family: 'Manrope', sans-serif;
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
 }
 
-body{
+body {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +24,7 @@ body{
     padding: 0px 20px;
 }
 
-.container{
+.container {
     display: flex;
     background-color: white;
     border-radius: 10px;
@@ -33,7 +33,7 @@ body{
 }
 
 
-.image-container img{
+.image-container img {
     max-width: 350px;
     display: block;
     height: 100%;
@@ -43,74 +43,74 @@ body{
 }
 
 
-.write-up-container{
+.write-up-container {
     max-width: 550px;
     padding: 30px;
 }
 
-.write-up-container > p{
+.write-up-container>p {
     color: var(--Desaturated-Dark-Blue);
     margin-bottom: 16px;
     font-size: 15px;
 }
 
-.write-up-container h2{
+.write-up-container h2 {
     color: var(--Very-Dark-Grayish-Blue);
     margin-bottom: 10px;
 }
 
-.avatar-container{
+.avatar-container {
     display: flex;
     align-items: center;
     gap: 18px;
 }
 
-.avatar-container img{
+.avatar-container img {
     border-radius: 100%;
     height: 56px;
 }
 
-.avatar-write-up p:nth-child(1){
+.avatar-write-up p:nth-child(1) {
     font-weight: 700;
     color: var(--Very-Dark-Grayish-Blue);
 }
 
-.avatar-write-up p:nth-child(2){
+.avatar-write-up p:nth-child(2) {
     color: var(--Desaturated-Dark-Blue);
 }
 
-footer{
+footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.share-icon{
+.share-icon {
     border-radius: 100%;
     height: 30px;
     padding: 10px;
     background: var(--Very-Dark-Grayish-Blue);
 }
 
-.share-icon:hover{
+.share-icon:hover {
     cursor: pointer;
 }
 
 
 /* socials container css */
-.menu-container{
+.menu-container {
     position: relative;
 }
 
 
-.socials{
+.socials {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     position: relative;
 }
 
-.socials:before{
+.socials:before {
     content: '';
     transform: rotate(180deg);
     left: 81px;
@@ -125,7 +125,7 @@ footer{
 
 
 
-.socials-container{
+.socials-container {
     background: var(--Very-Dark-Grayish-Blue);
     padding: 15px 30px;
     width: 250px;
@@ -133,17 +133,15 @@ footer{
     position: absolute;
     top: -75px;
     left: -108px;
-    display: none;
     opacity: 0;
-    transition: opacity .4s ease-in-out  ;
+    transition: opacity .4s ease-in-out;
 }
 
-.socials-container.clicked{
-    display: block;
+.socials-container.clicked {
     opacity: 1;
 }
 
-.socials-container p{
+.socials-container p {
     color: var(--Grayish-Blue);
     text-transform: uppercase;
     font-size: 12px;
@@ -155,13 +153,46 @@ footer{
 /* socials container css */
 
 
-@media screen and (max-width:721px){
-    .container{
-      flex-direction: column;
-      max-width: 400px;
+@media screen and (max-width:1068px) {
+    .socials-container {
+        background: var(--Very-Dark-Grayish-Blue);
+        padding: 35px 30px;
+        min-width: 100%;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        position: absolute;
+        top: 590px;
+        left: 0px;
+        opacity: 0;
+        transition: opacity .4s ease-in-out;
     }
 
-    .image-container img{
+    .container{
+        position: relative; 
+        overflow: hidden;
+    }
+    
+    .menu-container {
+        position: static;
+    }
+    
+    .socials {
+        position: static;
+    }
+
+    .socials:before{
+        display: none;
+    }
+
+
+    .container {
+        flex-direction: column;
+        max-width: 450px;
+    }
+
+    .image-container img {
         max-width: 100%;
         height: auto;
         object-fit: cover;

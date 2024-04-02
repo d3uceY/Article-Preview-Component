@@ -4,61 +4,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- this is the cdn for the google fonts api that imports fonts through he cdn -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Article preview component</title>
 </head>
 
 <body>
-  <div class="container">
-
-
-    <div class="image-container">
-      <img src="/images/drawers.jpg" alt="this is the image of a drawer">
-    </div>
-
-
-    <div class="write-up-container">
-      <h2>Shift the overall look and feel by adding these wonderful
-        touches to furniture in your home</h2>
-      <p> Ever been in a room and felt like something was missing? Perhaps
-        it felt slightly bare and uninviting. I’ve got some simple tips
-        to help you make any room feel complete.</p>
-      <footer>
-        <div class="avatar-container">
-          <img src="/images/avatar-michelle.jpg" alt="this is the avatar">
-          <div class="avatar-write-up">
-            <p>Michelle Appleton</p>
-            <p>28 Jun 2020</p>
+  <main class="container">
+    <div class="preview-component">
+      <div class="drawer-img-container">
+        <img class="drawer-img" src="/images/drawers.jpg" alt="image of a drawer">
+      </div>
+      <div class="description">
+        <h1>Shift the overall look and feel by adding these wonderful touches to furniture in your home</h1>
+        <p> Ever been in a room and felt like something was missing? Perhaps
+          it felt slightly bare and uninviting. I’ve got some simple tips
+          to help you make any room feel complete.
+        </p>
+        <div class="socials">
+          <div class="avatar-container">
+            <div class="avatar">
+              <img src="/images/avatar-michelle.jpg" alt="picture of mitchell">
+            </div>
+            <div class="avatar-info">
+              <div>Michelle Appleton</div>
+              <div>28 Jun 2020</div>
+            </div>
           </div>
-        </div>
-        <div class="menu-container">
-           <img src="/images/icon-share.svg" alt="share-icon" class="share-button-1">
-           <div class="socials-container">
-            <div class="socials">
-              <p>share</p>
-              <img src="/images/icon-facebook.svg" alt="facebook">
-              <img src="/images/icon-twitter.svg" alt="twitter">
-              <img src="/images/icon-pinterest.svg" alt="pinterest">
-            </div>
-            <div class="share-button-2-container">
-              <img src="/images/icon-share.svg" alt="share-icon" class="share-button-2">
-            </div>
-           </div>
-        </div>
-      </footer>
-    </div>
-  </div>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://github.com/d3uceY">Onyekwelu Ugochukwu Jesse (deuce)</a>.
-  </div>
-  <script src="/index.js"></script>
+
+          <div class="share-container">
+            <button class="share-button">
+              <!-- share icon svg -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
+                <path class="share-color" fill="#6E8098"
+                  d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z" />
+              </svg>
+              <!-- share icon svg -->
+              <!-- floating share tab -->
+              <div class="floating-button close">
+                <span class="share">SHARE</span>
+                <img src="/images/icon-facebook.svg" alt="facebook">
+                <img src="/images/icon-twitter.svg" alt="twitter">
+                <img src="/images/icon-pinterest.svg" alt="pinterest">
+                <div class="triangle"></div>
+              </div>
+            </button>
+          </div>
+
+        </div>
+      </div>
+      <div class="floating-button-small">
+        <div>
+          <span class="share">SHARE</span>
+          <img src="/images/icon-facebook.svg" alt="facebook">
+          <img src="/images/icon-twitter.svg" alt="twitter">
+          <img src="/images/icon-pinterest.svg" alt="pinterest">
+        </div>
+        <button class="share-button-small">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
+            <path class="share-color" fill="#6E8098"
+              d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- javscript -->
+  <script src="/script.js"></script>
 </body>
 
 </html>
-
 
 
 <!-- Shift the overall look and feel by adding these wonderful 
@@ -72,3 +94,8 @@
   28 Jun 2020
 
   Share -->
+
+<!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->

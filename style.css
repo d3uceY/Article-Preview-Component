@@ -1,222 +1,276 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+/* universal selector used to remove the defaults attached to the browser */
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'manrope', 'sans-serif';
+}
 
+
+/* root for root vairables that are assigned to the website */
+/* root */
 :root {
     --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
     --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
     --Grayish-Blue: hsl(212, 23%, 69%);
     --Light-Grayish-Blue: hsl(210, 46%, 95%);
+    /* this is the default font set for all things on the website */
 }
 
-* {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-    font-family: 'Manrope', sans-serif;
-}
 
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: var(--Light-Grayish-Blue);
-    min-height: 100vh;
-    padding: 0px 20px;
-}
-
+/* css for the container */
 .container {
+    min-height: 100vh;
+    background: var(--Light-Grayish-Blue);
     display: flex;
-    background-color: white;
-    border-radius: 10px;
-    margin-bottom: 4rem;
-    box-shadow: 2px 10px 20px var(--Desaturated-Dark-Blue);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
+/* css for preview component */
+.preview-component {
+    margin: 0px 30px;
+    display: flex;
+    max-width: 900px;
+    border-radius: 10px;
+    position: relative;
+}
 
-.image-container img {
-    max-width: 350px;
-    display: block;
-    height: 100%;
-    object-fit: cover;
+/* css for drawer image */
+.drawer-img-container {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    overflow: hidden;
 }
 
 
-.write-up-container {
-    max-width: 550px;
+.drawer-img {
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom left;
+    height: 100%;
+    display: block;
+}
+
+/* styling for the descrition */
+
+.description {
     padding: 30px;
+    background: white;
+    max-width: 550px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
-.write-up-container>p {
-    color: var(--Desaturated-Dark-Blue);
-    margin-bottom: 16px;
-    font-size: 15px;
-}
-
-.write-up-container h2 {
+h1 {
+    font-weight: 700 !important;
     color: var(--Very-Dark-Grayish-Blue);
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
+p {
+    color: var(--Desaturated-Dark-Blue);
+    margin-bottom: 20px;
+}
+
+
+/* this is the css for the avatar container and it's components */
 .avatar-container {
     display: flex;
+    gap: 20px;
     align-items: center;
-    gap: 18px;
 }
 
-.avatar-container img {
+.avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.avatar img {
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
-    height: 56px;
+    display: block;
 }
 
-.avatar-write-up p:nth-child(1) {
+
+
+.avatar-info div:first-child {
     font-weight: 700;
     color: var(--Very-Dark-Grayish-Blue);
 }
 
-.avatar-write-up p:nth-child(2) {
+.avatar-info div:last-child {
     color: var(--Desaturated-Dark-Blue);
 }
 
-footer {
+.socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* share container css */
+.floating-button {
+    background: var(--Very-Dark-Grayish-Blue);
+    width: 270px;
+    border-radius: 11px;
+    padding: 20px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: absolute;
+    scale: 1;
+    transform-origin: center bottom;
+    transition: scale ease-in-out 250ms;
+    top: -76px;
+    left: -122px;
 }
 
-.share-button-1 {
+
+/* closed state for the floating tab */
+.floating-button.close {
+    scale: 0;
+}
+
+/* closed state for the floating tab */
+
+
+.share {
+    letter-spacing: 4px;
+    color: white;
+    color: #96A3B9;
+}
+
+.share-button {
     border-radius: 100%;
-    height: 30px;
-    padding: 10px;
-    background: var(--Very-Dark-Grayish-Blue);
-}
-
-.share-button-1:hover {
+    position: relative;
+    background: var(--Desaturated-Dark-Blue);
+    width: 40px;
+    height: 40px;
+    border: none;
     cursor: pointer;
 }
 
-
-/* socials container css */
-.menu-container {
-    position: relative;
+.share-color {
+    fill: white;
 }
 
-
-.socials {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    position: relative;
-}
-
-.socials:before {
-    content: '';
-    transform: rotate(180deg);
-    left: 81px;
-    top: 33px;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-bottom: 22px solid var(--Very-Dark-Grayish-Blue);
-    border-left: 12px solid transparent;
-    border-right: 14px solid transparent;
-}
-
-
-
-.socials-container {
+/* css for share button small screen */
+.floating-button-small{
     background: var(--Very-Dark-Grayish-Blue);
-    padding: 15px 30px;
-    width: 250px;
-    border-radius: 10px;
+    padding: 20px 35px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
     position: absolute;
-    top: -75px;
-    left: -108px;
-    opacity: 0;
-    transition: opacity .4s ease-in-out;
-}
-
-.socials-container.clicked {
-    opacity: 1;
-}
-
-.socials-container p {
-    color: var(--Grayish-Blue);
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 5px;
-}
-
-
-.share-button-2-container{
+    width: 100%;
+    bottom: 0;
     display: none;
 }
 
+.floating-button-small > div{
+   width: 100%;
+   max-width: 200px;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   justify-content: space-between;
+}
 
+.floating-button-small > div img{
+    height: 25px;
+    width: 25px;
+}
 
-/* socials container css */
+.floating-button-small .share{
+    font-size: 14px;
+}
 
+.share-button-small{
+    border-radius: 100%;
+    background: var(--Desaturated-Dark-Blue);
+    width: 40px;
+    height: 40px;
+    border: none;
+    aspect-ratio: 1/1;
+}
 
-@media screen and (max-width:1068px) {
-    .socials-container {
-        background: var(--Very-Dark-Grayish-Blue);
-        padding: 35px 30px;
-        min-width: 100%;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border-top-left-radius: 0px;
-        border-top-right-radius: 0px;
-        position: absolute;
-        top: 590px;
-        left: 0px;
-        opacity: 1;
-        transition: all .4s ease-in-out;
-        display: flex;
-        justify-content: space-between;
-        transform: translateY(137px);
-    }
+/* this is the css for the triangle */
+.triangle {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 16px 15.5px 0 15.5px;
+    border-color: var(--Very-Dark-Grayish-Blue) transparent transparent transparent;
+    transform: rotate(0deg);
+    position: absolute;
+    bottom: -14px;
+    left: 0px;
+    right: 0px;
+    margin: 0px auto;
+}
 
-    .socials-container.clicked{
-        /* opacity: 1; */
-        transform: translateY(0);
-    }
-
-    .share-button-2-container{
-        display: block;
-    }
-
-    .share-button-2{
-        cursor: pointer;
-    }
-
-    .container{
-        position: relative; 
+/* media query  */
+@media screen and (max-width: 759px) {
+    .preview-component {
+        flex-direction: column;
         overflow: hidden;
     }
-    
-    .menu-container {
-        position: static;
-    }
-    
-    .socials {
-        position: static;
-        width: 50%;
+
+    .description {
+        padding: 35px;
+        padding-bottom: 20px;
+        background: white;
+        max-width: initial;
+        border-radius: none;
     }
 
-    .socials:before{
+    .drawer-img-container {
+        border-radius: unset;
+        overflow: hidden;
+    }
+
+    .drawer-img {
+        object-position: center center;
+    }
+
+
+    .floating-button{
         display: none;
     }
 
 
-    .container {
-        flex-direction: column;
-        max-width: 450px;
+    .floating-button-small{
+        display: flex;
+        transform: translateY(100%);
+        transition: all ease-in-out 250ms;
     }
 
-    .image-container img {
-        max-width: 100%;
-        height: auto;
-        object-fit: cover;
+
+    /* this is the open state css */
+    .floating-button-small.open{
+        transform: translateY(0);
     }
 }
+
+
+@media screen and (max-width: 550px){
+    h1{
+        font-size: 20px;
+    }
+
+    .avatar-info{
+        font-size: 14px;
+    }
+
+    .floating-button-small > div img{
+        height: 20px;
+        width: 20px;
+    }
+    
+}
+/* media query  */
